@@ -9,4 +9,10 @@ Route::get('/', function () {
 Route::get('/detailServices', function () {
     return view('frontend.layout.servicesdetain.service');
 })->name('detailServices');
+ 
 
+//backend route for dashboard
+ 
+Route::get('/dashboard', function () {
+    return view('backend.layouts.screens.dashboard');
+})->name('dashboard');
