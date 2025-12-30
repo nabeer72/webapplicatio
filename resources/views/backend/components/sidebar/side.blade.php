@@ -1,236 +1,184 @@
- <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+<!-- ======= Sidebar ======= -->
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
+    id="sidenav-main">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+    <!-- Logo -->
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+            aria-hidden="true" id="iconSidenav"></i>
 
-      <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+        <a class="navbar-brand px-4 py-3 m-0" href="#">
+            <img src="{{ asset('backendassets/img/logo-ct-dark.png') }}" class="navbar-brand-img" width="26" height="26"
+                alt="logo">
+            <span class="ms-1 text-sm text-dark">Creative Tim</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+    </div>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
+    <hr class="horizontal dark mt-0 mb-2">
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+
+            <!-- Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link active bg-gradient-dark text-white" href="#">
+                    <i class="material-symbols-rounded opacity-5">dashboard</i>
+                    <span class="nav-link-text ms-1">Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Primary Setting Dropdown -->
+            <li class="nav-item">
+                <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#primarySetting" role="button"
+                    aria-expanded="false" aria-controls="primarySetting">
+                    <i class="material-symbols-rounded opacity-5">table_view</i>
+                    <span class="nav-link-text ms-1">Primary Setting</span>
+                    <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
+                </a>
+
+                <div class="collapse" id="primarySetting">
+                    <ul class="nav ms-4 ps-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">General Settings</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">User Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Secondary Setting Dropdown -->
+            <li class="nav-item">
+                <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#secondarySetting" role="button"
+                    aria-expanded="false" aria-controls="secondarySetting">
+                    <i class="material-symbols-rounded opacity-5">receipt_long</i>
+                    <span class="nav-link-text ms-1">Secondary Setting</span>
+                    <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
+                </a>
+
+                <div class="collapse" id="secondarySetting">
+                    <ul class="nav ms-4 ps-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{ route('carousel.index') }}">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Carousel</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Feature Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Status</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Skills</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Testimonials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Portfolio</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Team</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">F.A.Q</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+                                <span class="sidenav-mini-icon">•</span>
+                                <span class="sidenav-normal">Contact</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Section Title -->
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">
+                    Account Pages
+                </h6>
+            </li>
+
+            <!-- Profile -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <i class="material-symbols-rounded opacity-5">person</i>
+                    <span class="nav-link-text ms-1">Profile</span>
+                </a>
+            </li>
+
+            <!-- Sign In -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <i class="material-symbols-rounded opacity-5">login</i>
+                    <span class="nav-link-text ms-1">Sign In</span>
+                </a>
+            </li>
+
+            <!-- Sign Up -->
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                    <i class="material-symbols-rounded opacity-5">assignment</i>
+                    <span class="nav-link-text ms-1">Sign Up</span>
+                </a>
+            </li>
+
         </ul>
-      </li><!-- End Components Nav -->
+    </div>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
+</aside>
+<!-- ======= End Sidebar ======= -->

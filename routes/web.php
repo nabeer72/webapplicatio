@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,10 +10,15 @@ Route::get('/', function () {
 Route::get('/detailServices', function () {
     return view('frontend.layout.servicesdetain.service');
 })->name('detailServices');
- 
 
-//backend route for dashboard
- 
+// backend route for dashboard
+
 Route::get('/dashboard', function () {
     return view('backend.layouts.screens.dashboard');
 })->name('dashboard');
+
+Route::resources([
+    'carousel' => CarouselController::class,
+]);
+
+Route::get('delete/carousel/{id}', [CarouselController::class, 'destory'])->name('carousel-delete');
