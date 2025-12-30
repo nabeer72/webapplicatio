@@ -26,8 +26,9 @@
 <body class="g-sidenav-show  bg-gray-100">
   @include('backend.components.sidebar.side')
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    @include('backend.components.header.header')
   @yield('dashboard')
-
+  @include('backend.components.footer.footer')
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">

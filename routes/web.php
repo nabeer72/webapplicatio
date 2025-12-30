@@ -20,5 +20,6 @@ Route::get('/dashboard', function () {
 Route::resources([
     'carousel' => CarouselController::class,
 ]);
-
-Route::get('delete/carousel/{id}', [CarouselController::class, 'destory'])->name('carousel-delete');
+// carousel updaet and delete
+Route::get('delete/carousel/{id}', [CarouselController::class, 'destroy'])->name('carousel-delete');
+Route::post('update/carousel/{id}', [CarouselController::class, 'update'])->name('carousel-update');

@@ -2,11 +2,11 @@
 
 @section('dashboard')
 <div class="pagetitle mb-3">
-    <h1>Carousel</h1>
+    <h3>Carousel</h3>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Carousel</li>
+            <li class="breadcrumb-item active" style="">Carousel</li>
         </ol>
     </nav>
 </div>
@@ -52,7 +52,7 @@
                             <img src="{{asset($model->image) }}" width="40" height="40">
                         </td>
                         <td class="cell">
-                            <a class="btn btn-sm btn-success" href="#">Edit</a>
+                            <a class="btn btn-sm btn-success" href="{{ route('carousel.edit',$model->id) }}">Edit</a>
                         </td>
                         <td class="cell">
                             <a class="btn btn-sm btn-danger" href="{{ route('carousel-delete',$model->id) }}">Delete</a>
@@ -77,59 +77,68 @@
 
             <!-- Modal Header -->
             <div class="modal-header bg-dark text-white border-bottom-0">
-                <h5 class="modal-title"><i class="fa fa-image me-2"></i>Add Carousel</h5>
+                <h4 class="modal-title fw-bold">
+                    <i class="fa fa-image me-2"></i> Add Carousel
+                </h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                     style="filter: invert(22%) sepia(96%) saturate(7431%) hue-rotate(1deg) brightness(92%) contrast(94%);"></button>
             </div>
 
             <!-- Modal Body -->
-            <form class="row g-3 p-4" method="POST" action='{{ route("carousel.store") }}'
-                enctype="multipart/form-data">
-
+            <form class="p-4" method="post" action="{{ route('carousel.store') }}" enctype="multipart/form-data">
                 @csrf
-                <div class="col-md-6">
-                    <label for="title" class="form-label">Title</label>
-                    <input name="title" type="text" class="form-control" id="title">
-                    <small class="text-danger" style="font-size: 12px"></small>
+                <div class="row g-3">
+
+                    <!-- Title -->
+                    <div class="col-md-6">
+                        <label for="title" class="form-label fw-semibold">Title</label>
+                        <input name="title" type="text" class="form-control form-control-sm border border-secondary" id="title" placeholder="Enter title">
+                    </div>
+
+                    <!-- Subtitle -->
+                    <div class="col-md-6">
+                        <label for="subtitle" class="form-label fw-semibold">Subtitle</label>
+                        <input name="subtitle" type="text" class="form-control form-control-sm border border-secondary" id="subtitle" placeholder="Enter subtitle">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-md-6">
+                        <label for="description" class="form-label fw-semibold">Description</label>
+                        <input name="description" type="text" class="form-control form-control-sm border border-secondary" id="description" placeholder="Enter description">
+                    </div>
+
+                    <!-- Sub Description -->
+                    <div class="col-md-6">
+                        <label for="subdescription" class="form-label fw-semibold">Sub Description</label>
+                        <input name="subdescription" type="text" class="form-control form-control-sm border border-secondary" id="subdescription" placeholder="Enter sub description">
+                    </div>
+
+                    <!-- Video Link -->
+                    <div class="col-md-6">
+                        <label for="videolink" class="form-label fw-semibold">Video Link</label>
+                        <input name="videolink" type="text" class="form-control form-control-sm border border-secondary" id="videolink" placeholder="https://example.com">
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="col-md-6">
+                        <label for="image" class="form-label fw-semibold">Image</label>
+                        <input name="image" type="file" class="form-control form-control-sm border border-secondary" id="image">
+                        <small class="text-muted">Recommended: 800x400px</small>
+                    </div>
+
                 </div>
-                <div class="col-md-6">
-                    <label for="subtitle" class="form-label">Subtitle</label>
-                    <input name="subtitle" type="text" class="form-control" id="subtitle">
-                    <small class="text-danger" style="font-size: 12px">{{ $errors->has('title') ?
-                        $errors->first('title') : '' }}</small>
-                </div>
-                <div class="col-md-12">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="3" class="form-control"></textarea>
-                    <small class="text-danger" style="font-size: 12px">{{ $errors->has('title') ?
-                        $errors->first('title') : '' }}</small>
-                </div>
-                <div class="col-md-12">
-                    <label for="subdescription" class="form-label">Sub Description</label>
-                    <textarea name="subdescription" id="subdescription" cols="30" rows="3" class="form-control"></textarea>
-                    <small class="text-danger" style="font-size: 12px">{{ $errors->has('title') ?
-                        $errors->first('title') : '' }}</small>
-                </div>
-                <div class="col-md-12">
-                    <label for="videolink" class="form-label">video Link</label>
-                    <input name="videolink" id="videolink" cols="30" rows="3" class="form-control"></textarea>
-                    <small class="text-danger" style="font-size: 12px">{{ $errors->has('title') ?
-                        $errors->first('title') : '' }}</small>
-                </div>
-                <div class="col-md-5">
-                    <label for="image" class="form-label">Image</label>
-                    <input name="image" class="form-control" type="file" id="image">
-                    <small class="text-danger" style="font-size: 12px">{{ $errors->has('title') ?
-                        $errors->first('title') : '' }}</small>
-                </div>
-                <div class="col-md-12">
-                    <input type="submit" class="btn btn-primary bx-pull-right btn-sm">
+
+                <!-- Submit Button -->
+                <div class="mt-4 text-end">
+                    <button type="submit" class="btn btn-primary btn-sm px-4">
+                        <i class="fa fa-plus me-1"></i> Add
+                    </button>
                 </div>
 
             </form>
-
         </div>
     </div>
 </div>
+
 
 @endsection
