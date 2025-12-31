@@ -11,7 +11,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $models = About::get();
+
+        return view('backend.layouts.screens.about.index', compact('models'));
+
     }
 
     /**
@@ -25,9 +28,26 @@ class AboutController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AboutRequest $request)
     {
-        //
+        $model = new About;
+        $model->title = $idrequest->title;
+        $model->description = $request->description;
+        $model->completeproject = $request->completeproject;
+        $model->statifiedclients = $request->statifiedclients;
+        $model->yearofexcellenc = $request->yearofexcellenc;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('asset/About'), $imageName);
+            $model->image = 'asset/About/'.$imageName;
+
+            $done = $model->save();
+
+            return back();
+
+        }
     }
 
     /**
@@ -43,15 +63,34 @@ class AboutController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $model = Carousel::findOrFail($id);
+
+        return view('backend.layouts.screens.about.edit');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AboutUpdateRequest $request, string $id)
     {
-        //
+        $model = new About;
+        $model->title = $idrequest->title;
+        $model->description = $request->description;
+        $model->completeproject = $request->completeproject;
+        $model->statifiedclients = $request->statifiedclients;
+        $model->yearofexcellenc = $request->yearofexcellenc;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('asset/About'), $imageName);
+            $model->image = 'asset/About/'.$imageName;
+
+            $done = $model->save();
+
+            return back();
+
+        }
     }
 
     /**
@@ -59,6 +98,9 @@ class AboutController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $model     = About::find($id);
+        $model->delete();
+        return back();
+
     }
 }
