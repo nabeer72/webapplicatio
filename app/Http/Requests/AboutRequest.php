@@ -24,7 +24,7 @@ class AboutRequest extends FormRequest
         return [
             'title'                      => 'required|string|max:200',
             'description'                => 'required|string|max:300',
-            'completeproject'            => 'nullable|integer|max:200',
+            'completeproject'            => 'nullable|string|max:200',
             'statifiedclients'           => 'nullable|string|max:200',
             'yearofexcellence'           => 'nullable|string|max:200',
             'image'                      => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'

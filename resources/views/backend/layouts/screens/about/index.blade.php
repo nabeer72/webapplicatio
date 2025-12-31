@@ -1,0 +1,147 @@
+@extends('backend.layouts.mainpage.layout')
+
+@section('dashboard')
+<div class="pagetitle mb-3">
+    <h3>About</h3>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" style="">About</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Carousel List</h5>
+        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+            <i class="fa fa-plus me-1"></i> Add About
+        </button>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Complete Project</th>
+                        <th>Statified Clients</th>
+                        <th>Year Of Excellence</th>
+                        <th>Image</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @forelse ($models as $model)
+                    <tr>
+                        <td class="cell">{{ $loop->iteration }}</td>
+                        <td class="cell">{{ $model['title'] }}</td>
+                        <td class="cell">{{ $model['description'] }}</td>
+                        <td class="cell">{{ $model['completeproject'] }}</td>
+                        <td class="cell">{{ $model['statifiedclients'] }}</td>
+                        <td class="cell">{{ $model['yearofexcellence'] }}</td>
+                        <td class="cell">
+                            <img src="{{asset($model->image) }}" width="40" height="40">
+                        </td>
+                        <td class="cell">
+                            <a class="btn btn-sm btn-success" href="{{ route('about.edit',$model->id) }}">Edit</a>
+                        </td>
+                        <td class="cell">
+                            <a class="btn btn-sm btn-danger" href="{{ route('about-delete',$model->id) }}">Delete</a>
+                        </td>
+                    </tr>
+                    @empty
+
+                    <tr>
+                        <td colspan="10"><strong>No record found...</strong></td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0">
+
+            <!-- Modal Header -->
+            <div class="modal-header bg-dark text-white border-bottom-0">
+                <h4 class="modal-title fw-bold">
+                    <i class="fa fa-image me-2"></i> Add About
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    style="filter: invert(22%) sepia(96%) saturate(7431%) hue-rotate(1deg) brightness(92%) contrast(94%);"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <form class="p-4" method="post" action="{{ route('about.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="row g-3">
+
+                    <!-- Title -->
+                    <div class="col-md-6">
+                        <label for="title" class="form-label fw-semibold">Title</label>
+                        <input name="title" type="text" class="form-control form-control-sm border border-secondary"
+                            id="title" placeholder="Enter title">
+                    </div>
+                    <!-- Description -->
+                    <div class="col-md-6">
+                        <label for="description" class="form-label fw-semibold">Description</label>
+                        <input name="description" type="text"
+                            class="form-control form-control-sm border border-secondary" id="description"
+                            placeholder="Enter description">
+                    </div>
+                    <!-- Subtitle -->
+                    <div class="col-md-6">
+                        <label for="subtitle" class="form-label fw-semibold">Complete Project</label>
+                        <input name="completeproject" type="text" class="form-control form-control-sm border border-secondary"
+                            id="completeproject" placeholder="Enter complete project">
+                    </div>
+
+
+
+                    <!-- Sub Description -->
+                    <div class="col-md-6">
+                        <label for="statifiedclients" class="form-label fw-semibold">Statified Clients</label>
+                        <input name="statifiedclients" type="text"
+                            class="form-control form-control-sm border border-secondary" id="statifiedclients"
+                            placeholder="Enter sub description">
+                    </div>   <!-- Sub Description -->
+                    <div class="col-md-6">
+                        <label for="yearofexcellence" class="form-label fw-semibold">Year Of Excellence</label>
+                        <input name="yearofexcellence" type="text"
+                            class="form-control form-control-sm border border-secondary" id="yearofexcellence"
+                            placeholder="Enter sub year of excellence">
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="col-md-6">
+                        <label for="image" class="form-label fw-semibold">Image</label>
+                        <input name="image" type="file" class="form-control form-control-sm border border-secondary"
+                            id="image">
+                        <small class="text-muted">Recommended: 800x400px</small>
+                    </div>
+
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-4 text-end">
+                    <button type="submit" class="btn btn-primary btn-sm px-4">
+                        <i class="fa fa-plus me-1"></i> Add
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@endsection

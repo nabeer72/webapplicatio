@@ -24,7 +24,7 @@ class AboutUpdateRequest extends FormRequest
         return [
             'title'                      => 'string|max:200',
             'description'                => 'string|max:300',
-            'completeproject'            => 'integer|max:200',
+            'completeproject'            => 'string|max:200',
             'statifiedclients'           => 'string|max:200',
             'yearofexcellence'           => 'string|max:200',
             'image'                      => 'image|mimes:jpeg,png,jpg,gif|max:2048'

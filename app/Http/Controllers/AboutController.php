@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AboutRequest;
+use App\Http\Requests\AboutUpdateRequest;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -12,7 +15,6 @@ class AboutController extends Controller
     public function index()
     {
         $models = About::get();
-
         return view('backend.layouts.screens.about.index', compact('models'));
 
     }
@@ -31,7 +33,7 @@ class AboutController extends Controller
     public function store(AboutRequest $request)
     {
         $model = new About;
-        $model->title = $idrequest->title;
+        $model->title = $request->title;
         $model->description = $request->description;
         $model->completeproject = $request->completeproject;
         $model->statifiedclients = $request->statifiedclients;
@@ -40,8 +42,8 @@ class AboutController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = uniqid().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('asset/About'), $imageName);
-            $model->image = 'asset/About/'.$imageName;
+            $image->move(public_path('assets/About'), $imageName);
+            $model->image = 'assets/About/'.$imageName;
 
             $done = $model->save();
 
@@ -73,8 +75,8 @@ class AboutController extends Controller
      */
     public function update(AboutUpdateRequest $request, string $id)
     {
-        $model = new About;
-        $model->title = $idrequest->title;
+        $model = About::find($id);
+        $model->title = $request->title;
         $model->description = $request->description;
         $model->completeproject = $request->completeproject;
         $model->statifiedclients = $request->statifiedclients;
@@ -83,8 +85,8 @@ class AboutController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = uniqid().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('asset/About'), $imageName);
-            $model->image = 'asset/About/'.$imageName;
+            $image->move(public_path('assets/About'), $imageName);
+            $model->image = 'assets/About/'.$imageName;
 
             $done = $model->save();
 

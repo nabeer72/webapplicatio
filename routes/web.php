@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('frontend.layout.mainPage.home');
@@ -19,7 +21,11 @@ Route::get('/dashboard', function () {
 
 Route::resources([
     'carousel' => CarouselController::class,
+    'about'    => AboutController::class,
 ]);
 // carousel updaet and delete
 Route::get('delete/carousel/{id}', [CarouselController::class, 'destroy'])->name('carousel-delete');
 Route::post('update/carousel/{id}', [CarouselController::class, 'update'])->name('carousel-update');
+// about updaet and delete
+Route::get('delete/about/{id}', [AboutController::class, 'destroy'])->name('about-delete');
+Route::post('update/about/{id}', [AboutController::class, 'update'])->name('about-update');

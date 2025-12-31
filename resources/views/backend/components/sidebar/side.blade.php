@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">
+                            <a class="nav-link text-dark" href="{{ route('about.index') }}">
                                 <span class="sidenav-mini-icon">•</span>
                                 <span class="sidenav-normal">About</span>
                             </a>
