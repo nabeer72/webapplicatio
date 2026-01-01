@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AboutRequest;
 use App\Http\Requests\AboutUpdateRequest;
 use App\Models\About;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -15,6 +14,7 @@ class AboutController extends Controller
     public function index()
     {
         $models = About::get();
+
         return view('backend.layouts.screens.about.index', compact('models'));
 
     }
@@ -45,11 +45,10 @@ class AboutController extends Controller
             $image->move(public_path('assets/About'), $imageName);
             $model->image = 'assets/About/'.$imageName;
 
-            $done = $model->save();
-
-            return back();
-
         }
+        $done = $model->save();
+
+        return back();
     }
 
     /**
@@ -88,11 +87,10 @@ class AboutController extends Controller
             $image->move(public_path('assets/About'), $imageName);
             $model->image = 'assets/About/'.$imageName;
 
-            $done = $model->save();
-
-            return back();
-
         }
+        $done = $model->save();
+
+        return back();
     }
 
     /**
@@ -100,8 +98,9 @@ class AboutController extends Controller
      */
     public function destroy(string $id)
     {
-        $model     = About::find($id);
+        $model = About::find($id);
         $model->delete();
+
         return back();
 
     }
