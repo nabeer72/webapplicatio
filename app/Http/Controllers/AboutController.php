@@ -37,7 +37,7 @@ class AboutController extends Controller
         $model->description = $request->description;
         $model->completeproject = $request->completeproject;
         $model->statifiedclients = $request->statifiedclients;
-        $model->yearofexcellenc = $request->yearofexcellenc;
+        $model->yearofexcellence = $request->yearofexcellence;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -64,9 +64,9 @@ class AboutController extends Controller
      */
     public function edit(string $id)
     {
-        $model = Carousel::findOrFail($id);
+        $model =  About::findOrFail($id);
 
-        return view('backend.layouts.screens.about.edit');
+        return view('backend.layouts.screens.about.edit',compact('model'));
     }
 
     /**
@@ -79,7 +79,7 @@ class AboutController extends Controller
         $model->description = $request->description;
         $model->completeproject = $request->completeproject;
         $model->statifiedclients = $request->statifiedclients;
-        $model->yearofexcellenc = $request->yearofexcellenc;
+        $model->yearofexcellence = $request->yearofexcellence;
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -88,9 +88,9 @@ class AboutController extends Controller
             $model->image = 'assets/About/'.$imageName;
 
         }
-        $done = $model->save();
+         $model->save();
 
-        return back();
+   return redirect()->route('about.index')->with('success', 'Carousel updated successfully!');
     }
 
     /**

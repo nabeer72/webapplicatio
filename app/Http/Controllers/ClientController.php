@@ -11,7 +11,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $model    =  Client::get();
+        return view('backend.layouts.screens.clients.index',compact('models'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store( $request)
     {
         //
     }

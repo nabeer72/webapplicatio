@@ -17,30 +17,38 @@
                             <!-- Title & Subtitle in one row -->
                             <div class="col-md-4">
                                 <label class="form-label fw-semibold">Title</label>
-                                <input type="text" name="title" class="form-control border border-secondary p-2" value="{{ $model->title }}" required>
+                                <input type="text" name="title" class="form-control border border-secondary p-2"
+                                    value="{{ $model->title }}" required>
                             </div>
 
 
                             <!-- Description & Sub Description -->
-                            <div class="col-md-4">
-                                <label class="form-label fw-semibold">Description</label>
-                                <textarea name="description" rows="3" class="form-control border border-secondary p-2">{{ $model->description }}</textarea>
-                            </div>
+
                             <div class="col-md-4">
                                 <label class="form-label fw-semibold">Complete Project</label>
-                                <input type="text" name="completeproject" class="form-control border border-secondary p-2" value="{{ $model->completeproject }}">
+                                <input type="text" name="completeproject"
+                                    class="form-control border border-secondary p-2"
+                                    value="{{ $model->completeproject }}">
                             </div>
 
                             <!-- Video Link -->
                             <div class="col-md-4">
                                 <label class="form-label fw-semibold">Statified Clients</label>
-                                <input type="text" name="statifiedclients" class="form-control border border-secondary p-2" value="{{ $model->videolink }}">
+                                <input type="text" name="statifiedclients"
+                                    class="form-control border border-secondary p-2"
+                                    value="{{ $model->statifiedclients }}">
                             </div>
-                                 <div class="col-md-4">
+                            <div class="col-md-4">
                                 <label class="form-label fw-semibold">Year Of Excellence</label>
-                                <input type="text" name="yearofexcellence" class="form-control border border-secondary p-2" value="{{ $model->videolink }}">
+                                <input type="text" name="yearofexcellence"
+                                    class="form-control border border-secondary p-2"
+                                    value="{{ $model->yearofexcellence }}">
                             </div>
-
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Description</label>
+                                <textarea name="description" rows="3"
+                                    class="form-control border border-secondary p-2">{{ $model->description }}</textarea>
+                            </div>
                             <!-- Image Upload -->
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Upload Image</label>
