@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('designation');
+            $table->string('description');
+            $table->string('rating');
+            $table->string('image');
             $table->timestamps();
         });
     }

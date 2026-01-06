@@ -5,7 +5,9 @@ use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\FeatureServicesController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\TestomonialController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/', function () {
@@ -31,6 +33,7 @@ Route::resources([
     'feature_service' => FeatureServicesController::class,
     'skill' => SkillsController::class,
     'status' => StatusController::class,
+    'testimonial' => TestomonialController::class,
 ]);
 // carousel updaet and delete
 Route::get('delete/carousel/{id}', [CarouselController::class, 'destroy'])->name('carousel-delete');
@@ -45,6 +48,9 @@ Route::post('update/feature_service/{id}', [FeatureServicesController::class, 'u
 Route::get('delete/skill/{id}', [SkillsController::class, 'destroy'])->name('skill-delete');
 Route::post('update/skill/{id}', [SkillsController::class, 'update'])->name('skill-update');
 // status updaet and delete
+Route::get('delete/status/{id}', [StatusController::class, 'destroy'])->name('status-delete');
+Route::post('update/status/{id}', [StatusController::class, 'update'])->name('status-update');
+// testomial updaet and delete
 Route::get('delete/status/{id}', [StatusController::class, 'destroy'])->name('status-delete');
 Route::post('update/status/{id}', [StatusController::class, 'update'])->name('status-update');
 

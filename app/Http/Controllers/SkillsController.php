@@ -33,7 +33,7 @@ class SkillsController extends Controller
         $model = new Skill;
         $model->name = $request->name;
         $model->percentage = $request->percentage;
-        $model->save();
+        $done = $model->save();
 
         return back()->with('success', 'Skill created successfully!');
     }

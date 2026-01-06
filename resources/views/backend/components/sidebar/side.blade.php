@@ -93,13 +93,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">
+                            <a class="nav-link text-dark" href="{{ route('status.index') }}">
                                 <span class="sidenav-mini-icon">•</span>
                                 <span class="sidenav-normal">Status</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">
+                            <a class="nav-link text-dark" href="{{ route('skill.index') }}">
                                 <span class="sidenav-mini-icon">•</span>
                                 <span class="sidenav-normal">Skills</span>
                             </a>
