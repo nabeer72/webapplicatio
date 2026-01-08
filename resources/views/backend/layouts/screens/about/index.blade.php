@@ -37,7 +37,6 @@
 
                 <tbody>
                     @forelse ($models as $model)
-                    
                     <tr>
                         <td class="cell">{{ $loop->iteration }}</td>
                         <td class="cell">{{ $model['title'] }}</td>
@@ -56,7 +55,6 @@
                         </td>
                     </tr>
                     @empty
-
                     <tr>
                         <td colspan="10"><strong>No record found...</strong></td>
                     </tr>
