@@ -23,7 +23,7 @@
             <!-- Dashboard -->
             <li class="nav-item">
                 <a class="nav-link active bg-gradient-dark text-white" href="#">
-                    <i class="material-symbols-rounded opacity-5">dashboard</i>
+
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
@@ -32,7 +32,7 @@
             <li class="nav-item">
                 <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#primarySetting" role="button"
                     aria-expanded="false" aria-controls="primarySetting">
-                    <i class="material-symbols-rounded opacity-5">table_view</i>
+
                     <span class="nav-link-text ms-1">Primary Setting</span>
                     <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
                 </a>
@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#secondarySetting" role="button"
                     aria-expanded="false" aria-controls="secondarySetting">
-                    <i class="material-symbols-rounded opacity-5">receipt_long</i>
+             
                     <span class="nav-link-text ms-1">Secondary Setting</span>
                     <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
                 </a>
