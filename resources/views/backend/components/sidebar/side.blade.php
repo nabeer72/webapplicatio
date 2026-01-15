@@ -139,7 +139,6 @@
                                 <span class="sidenav-mini-icon">•</span>
                                 <span class="sidenav-normal">Contact</span>
                             </a>
-                            
                         </li>
 
                     </ul>
