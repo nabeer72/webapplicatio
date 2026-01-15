@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#secondarySetting" role="button"
                     aria-expanded="false" aria-controls="secondarySetting">
-             
+
                     <span class="nav-link-text ms-1">Secondary Setting</span>
                     <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
                 </a>
@@ -139,6 +139,7 @@
                                 <span class="sidenav-mini-icon">•</span>
                                 <span class="sidenav-normal">Contact</span>
                             </a>
+                            
                         </li>
 
                     </ul>
