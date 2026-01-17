@@ -1,7 +1,6 @@
 <!-- ======= Sidebar ======= -->
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
     id="sidenav-main">
-
     <!-- Logo -->
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -15,11 +14,9 @@
     </div>
 
     <hr class="horizontal dark mt-0 mb-2">
-
     <!-- Menu -->
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
-
             <!-- Dashboard -->
             <li class="nav-item">
                 <a class="nav-link active bg-gradient-dark text-white" href="#">
@@ -172,7 +169,6 @@
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
             </li>
-
         </ul>
     </div>
 </aside>
