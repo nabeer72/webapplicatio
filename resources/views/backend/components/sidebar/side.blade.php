@@ -27,7 +27,6 @@
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
-
             <!-- Primary Setting Dropdown -->
             <li class="nav-item">
                 <a class="nav-link text-dark collapsed" data-bs-toggle="collapse" href="#primarySetting" role="button"
@@ -36,7 +35,6 @@
                     <span class="nav-link-text ms-1">Primary Setting</span>
                     <i class="material-symbols-rounded ms-auto text-xs">expand_more</i>
                 </a>
-
                 <div class="collapse" id="primarySetting">
                     <ul class="nav ms-4 ps-3">
                         <li class="nav-item">
@@ -167,7 +165,6 @@
                     <span class="nav-link-text ms-1">Sign In</span>
                 </a>
             </li>
-
             <!-- Sign Up -->
             <li class="nav-item">
                 <a class="nav-link text-dark" href="#">
@@ -178,7 +175,5 @@
 
         </ul>
     </div>
-
-
 </aside>
 <!-- ======= End Sidebar ======= -->
