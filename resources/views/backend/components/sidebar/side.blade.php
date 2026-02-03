@@ -169,6 +169,8 @@
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
             </li>
+
+            
         </ul>
     </div>
 </aside>
