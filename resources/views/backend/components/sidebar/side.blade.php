@@ -162,6 +162,8 @@
                     <span class="nav-link-text ms-1">Sign In</span>
                 </a>
             </li>
+
+            
             <!-- Sign Up -->
             <li class="nav-item">
                 <a class="nav-link text-dark" href="#">
